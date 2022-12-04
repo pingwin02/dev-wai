@@ -70,7 +70,7 @@
 								echo " <p style=color:green;>Wysłano!</p>";
 							break;
 							case 1:
-								echo " <p style=color:red;>Błąd przesyłania: Plik za duży!</p>";
+								echo " <p style=color:red;>Błąd przesyłania: Plik za duży! (Max 1 MB)</p>";
 							break;
 							case 2:
 								echo " <p style=color:red;>Błąd przesyłania: Plik musi być zdjęciem w formacie .jpg lub .png!</p>";
@@ -90,13 +90,13 @@
 				<form action="przeslij" id="przesylanie" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<legend>Dane osobowe</legend> <label for="autor">Autor:</label> <input id="id_autor" maxlength="60" name="nazwa_autor" <?php if (isset($_SESSION["logged_in"])) {echo "value='".$_SESSION["account_id"]."' readonly title='Zmiana zablokowana'";}?> placeholder="Podaj imię i nazwisko" required type="text"><br>
-						<label for="email">Adres email:</label> <input id="email" name="email" placeholder="Podaj adres mail" required type="email"><br class="zlam-smartfon">
+						<label for="email">Adres email:</label> <input id="email" name="email" placeholder="Podaj adres mail" title="Opcjonalnie" type="email"><br class="zlam-smartfon">
 						<label for="tel">Numer telefonu:</label> <input id="tel" name="tel" placeholder="123-456-789" title="Opcjonalnie" type="tel" size="11" maxlength="11" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
 					</fieldset>
 					<fieldset>
 						<legend>Dane dot. zdjęcia</legend> <label for="tytul">Podaj tytuł zdjęcia:</label> <input id="id_tytul" name="nazwa_tytul" title="Tytuł będzie wyświetlony w galerii zdjęć" maxlength="30" minlength="3" placeholder="Podaj tytuł zdjęcia" required size="30" type="text"><br>
 						<label for="miejsce">Miejsce wykonania zdjęcia:</label> <input id="miejsce" maxlength="30" name="miejsce" placeholder="Podaj miejsce" required title="Podaj pełną nazwę miejsca" type="text"><br>
-						<label class="data" for="data">Data zrobienia zdjęcia:</label> <input id="data" min="2021-01-01" name="data" required title="Zdjęcie musi być nowe" type="date" value="2021-01-01"> <label class="datepicker" for="datepicker">Data zrobienia zdjęcia:</label><input id="datepicker" name="data-js" placeholder="Kliknij, aby wybrać datę" type="text" required><br>
+						<label class="data" for="data">Data zrobienia zdjęcia:</label> <input id="data" min="2021-01-01" name="data" required title="Zdjęcie musi być nowe" type="date" value="2022-01-01"> <label class="datepicker" for="datepicker">Data zrobienia zdjęcia:</label><input id="datepicker" name="data-js" placeholder="Kliknij, aby wybrać datę" type="text" value="01.01.2022"required><br>
 						<label for="znak-wodny">Znak wodny:</label> <input id="znak-wodny" size="30" maxlength="30" name="znak-wodny" placeholder="Podaj treść znaku wodnego" required type="text"><br>
 						<input id="id_plik" name="nazwa_plik" required title="Akceptowane są tylko pliki .jpg .png. Max 1 MB" type="file"><br><br>
 						Ustaw widoczność zdjęcia:<br>
@@ -194,7 +194,7 @@
 			<hr class="ciemnahr">
 		</div>
 		<footer>
-			2021-2022 &copy; Damian Jankowski — Kosmiczne zdjęcia! <i class="icon-mail-alt"></i> <a href="mailto:s188597@student.pg.edu.pl">s188597@student.pg.edu.pl</a>
+			2022 &copy; Damian Jankowski — Kosmiczne zdjęcia!
 		</footer>
 	</div>
 	<script src="static/js/darkmode.js">

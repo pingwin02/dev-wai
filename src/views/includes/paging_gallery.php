@@ -50,7 +50,7 @@ settype($maxIloscStrony, "integer");
 $files = $db->files->find(
     $query_wyswietlanie,
     [
-    'sort' => ['id' => 1],
+    'sort' => ['id' => -1],
     'skip' => ($page -1)* PAGE_SIZE,
     'limit' => PAGE_SIZE
     ]

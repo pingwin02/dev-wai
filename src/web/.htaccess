@@ -1,4 +1,5 @@
 <IfModule mod_rewrite.c>
+	AddType application/x-httpd-php80 .php
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ front_controller.php?action=/$1 [QSA]

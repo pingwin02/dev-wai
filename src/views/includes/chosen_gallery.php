@@ -6,7 +6,7 @@ $db = get_db();
 $files = $db->files->find(
     [],
     [
-    'sort' => ['id' => 1],
+    'sort' => ['id' => -1],
     ]
 );
 $cart=get_cart();

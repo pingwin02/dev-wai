@@ -90,7 +90,6 @@ function login(&$model) {
     }
 
 }
-
 function logout() {
     if(isset($_SESSION['logged_in'])) {
         session_unset();
